@@ -60,7 +60,7 @@ def delete_event(id):
     event = Event.query.filter_by(id=id).one()
     db.session.delete(event)
     db.session.commit()
-    return f"Event (id = {id}) was deleted!"
+    return f"Event (id = {id:.^10}) was deleted!"
 
 # edit an event
 @app.route('/events/<id>', methods = ['PUT'])
